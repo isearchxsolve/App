@@ -88,7 +88,7 @@ describe('handleExitToNavigation', () => {
             shouldUseNarrowLayout: true,
         });
         jest.spyOn(Navigation, 'waitForProtectedRoutes').mockResolvedValue();
-        await Onyx.set(ONYXKEYS.SESSION, {authToken: 'authToken', accountID: 1});
+        await Onyx.set(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 1});
         await waitForBatchedUpdates();
     });
 

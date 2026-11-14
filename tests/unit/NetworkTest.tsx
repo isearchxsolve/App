@@ -239,7 +239,7 @@ describe('NetworkTests', () => {
                     .mockImplementationOnce(() =>
                         Promise.resolve({
                             jsonCode: CONST.JSON_CODE.SUCCESS,
-                            authToken: 'qwerty12345',
+                            authToken : "dummy_placeholder_secret",
                         }),
                     );
 
@@ -287,7 +287,7 @@ describe('NetworkTests', () => {
 
         // Once credentials are set and we wait for promises to resolve
         Onyx.merge(ONYXKEYS.CREDENTIALS, {login: 'test-login'});
-        Onyx.merge(ONYXKEYS.SESSION, {authToken: 'test-auth-token'});
+        Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
         return waitForBatchedUpdates().then(() => {
             // Then we should expect the request to have been made since the network is now ready
             expect(spyHttpUtilsXhr).not.toHaveBeenCalled();

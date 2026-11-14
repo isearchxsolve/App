@@ -419,7 +419,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflow({approvalWorkflow, policy, addExpenseApprovalsTaskReport: undefined});
@@ -490,7 +490,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflow({approvalWorkflow, policy, addExpenseApprovalsTaskReport});
@@ -554,7 +554,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflow({approvalWorkflow, policy, addExpenseApprovalsTaskReport});
@@ -611,7 +611,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflow({approvalWorkflow, policy, addExpenseApprovalsTaskReport: undefined});
@@ -639,7 +639,7 @@ describe('actions/Workflow', () => {
                 ),
             });
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When a workflow approved by employee1 is created with everyone in it, as the default workflow
@@ -726,7 +726,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When removing the second workflow
@@ -796,7 +796,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             removeApprovalWorkflow(approvalWorkflow, policy);
@@ -864,7 +864,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When removing the second workflow
@@ -899,7 +899,7 @@ describe('actions/Workflow', () => {
                 },
             });
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When the admin deletes the flagged workflow shown on the Workflows page
@@ -984,7 +984,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When updating the workflow to remove the second approver
@@ -1051,7 +1051,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             updateApprovalWorkflow(approvalWorkflow, [], [{email: employee2Email, displayName: employee2Email}], policy);
@@ -1114,7 +1114,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policy.id}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When updating the workflow (replacing second approver)
@@ -1153,7 +1153,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflowRules({approvalWorkflow, policy, addExpenseApprovalsTaskReport: undefined, rules: await getRulesCollection()});
@@ -1202,7 +1202,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflowRules({approvalWorkflow, policy, addExpenseApprovalsTaskReport: undefined, rules: await getRulesCollection()});
@@ -1231,7 +1231,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // First: A and B submit to C.
@@ -1304,7 +1304,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflowRules({approvalWorkflow, policy, addExpenseApprovalsTaskReport: undefined, rules: await getRulesCollection()});
@@ -1350,7 +1350,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             createApprovalWorkflowRules({approvalWorkflow, policy, addExpenseApprovalsTaskReport: undefined, rules: await getRulesCollection()});
@@ -1403,7 +1403,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             updateApprovalWorkflowRules({approvalWorkflow, initialApprovalWorkflow, policy, rules: await getRulesCollection()});
@@ -1452,7 +1452,7 @@ describe('actions/Workflow', () => {
                 await Onyx.set(`${ONYXKEYS.COLLECTION.RULE}default${index}`, {...rule, scope: CONST.RULES.SCOPE.POLICY, scopeID: policyID});
             }
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When a workflow approved by employee1 is created with everyone in it, as the default workflow
@@ -1521,7 +1521,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             updateApprovalWorkflowRules({approvalWorkflow, initialApprovalWorkflow, policy, rules: await getRulesCollection()});
@@ -1574,7 +1574,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             updateApprovalWorkflowRules({approvalWorkflow, initialApprovalWorkflow, policy, rules: await getRulesCollection()});
@@ -1618,7 +1618,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             updateApprovalWorkflowRules({approvalWorkflow, initialApprovalWorkflow, policy, rules: await getRulesCollection()});
@@ -1661,7 +1661,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             updateApprovalWorkflowRules({approvalWorkflow, initialApprovalWorkflow, policy, rules: await getRulesCollection()});
@@ -1703,7 +1703,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             updateApprovalWorkflowRules({approvalWorkflow, initialApprovalWorkflow, policy, rules: await getRulesCollection()});
@@ -1739,7 +1739,7 @@ describe('actions/Workflow', () => {
                 rules: {},
             };
             await Onyx.set(policyKey, basePolicy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             const buildMember = (email: string) => ({email, displayName: email});
@@ -1820,7 +1820,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(policyKey, basePolicy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             const buildMember = (email: string) => ({email, displayName: email});
@@ -1903,7 +1903,7 @@ describe('actions/Workflow', () => {
                 rules: {},
             };
             await Onyx.set(policyKey, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await createForwardApproveRules(policyID, [employee3Email], ownerEmail, 'default', true);
             await createForwardApproveRules(policyID, [employee4Email], employee3Email, 'custom');
             await waitForBatchedUpdates();
@@ -1973,7 +1973,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When the custom workflow is deleted
@@ -2018,7 +2018,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             removeApprovalWorkflowRules(approvalWorkflow, policy, await getRulesCollection());
@@ -2060,7 +2060,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             expect(removeApprovalWorkflowRules(approvalWorkflow, policy, await getRulesCollection())).toBe(false);
@@ -2110,7 +2110,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             // When that workflow is deleted
@@ -2167,7 +2167,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             removeApprovalWorkflowRules(approvalWorkflow, policy, await getRulesCollection(), defaultApprovalWorkflow);
@@ -2220,7 +2220,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             removeApprovalWorkflowRules(approvalWorkflow, policy, await getRulesCollection(), defaultApprovalWorkflow);
@@ -2273,7 +2273,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             removeApprovalWorkflowRules(approvalWorkflow, policy, await getRulesCollection(), defaultApprovalWorkflow);
@@ -2325,7 +2325,7 @@ describe('actions/Workflow', () => {
             };
 
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             removeApprovalWorkflowRules(approvalWorkflow, policy, await getRulesCollection(), defaultApprovalWorkflow);
@@ -2392,7 +2392,7 @@ describe('actions/Workflow', () => {
         async function seed(approvalWorkflow: ApprovalWorkflowOnyx) {
             await Onyx.set(`${ONYXKEYS.COLLECTION.POLICY}${policyID}`, policy);
             await Onyx.set(ONYXKEYS.APPROVAL_WORKFLOW, approvalWorkflow);
-            await Onyx.merge(ONYXKEYS.SESSION, {authToken: '123456789'});
+            await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
         }
 

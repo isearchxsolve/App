@@ -119,7 +119,6 @@ const MCP_PLATFORM_DISPLAY_NAMES: Record<string, string> = {
     cursor: 'Cursor',
     claude: 'Claude',
     claudedesktop: 'Claude Desktop',
-    claudecodeex: 'Claude Code',
     chatgpt: 'ChatGPT',
     openai: 'OpenAI',
 };

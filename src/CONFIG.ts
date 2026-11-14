@@ -21,14 +21,14 @@ const getDefaultLegacyPartnerConfig = () => {
     if (Platform.OS === 'ios') {
         return {
             name: 'iphone',
-            password: 'e88ed31140a66c73b36a',
+            password : "dummy_placeholder_secret",
         };
     }
 
     // Android partner config
     return {
         name: 'android',
-        password: 'c3a9ac418ea3f152aae2',
+        password : "dummy_placeholder_secret",
     };
 };
 

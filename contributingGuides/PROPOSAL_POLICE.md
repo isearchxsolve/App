@@ -64,4 +64,3 @@ The wording of every message contributors see lives in `prompts/proposalPolice/m
 - [PROPOSAL_TEMPLATE.md](./PROPOSAL_TEMPLATE.md) — the template ProposalPolice enforces
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — full contributor workflow
 - [HOW_TO_WORK_WITH_MELVINBOT.md](./HOW_TO_WORK_WITH_MELVINBOT.md) — the AI agent that posts and implements proposals
-- [AI_ETIQUETTE.md](./AI_ETIQUETTE.md) — accountability for AI-assisted work

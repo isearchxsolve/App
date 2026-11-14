@@ -3372,7 +3372,7 @@ describe('SidebarUtils', () => {
                     pendingAction: null,
                 };
                 const session = {
-                    authToken: 'sensitive-auth-token',
+                    authToken : "dummy_placeholder_secret",
                     encryptedAuthToken: 'sensitive-encrypted-token',
                     email: 'user@example.com',
                     accountID: 12345,
@@ -3472,7 +3472,7 @@ describe('SidebarUtils', () => {
                 };
 
                 const session = {
-                    authToken: 'sensitive-auth-token',
+                    authToken : "dummy_placeholder_secret",
                     encryptedAuthToken: 'sensitive-encrypted-token',
                     email: 'user@example.com',
                     accountID: 2,
@@ -3516,7 +3516,7 @@ describe('SidebarUtils', () => {
 
             it('shows "You:" prefix in a 1:1 chat when report actions are not loaded yet (cold start scenario)', async () => {
                 const session = {
-                    authToken: 'sensitive-auth-token',
+                    authToken : "dummy_placeholder_secret",
                     encryptedAuthToken: 'sensitive-encrypted-token',
                     email: 'user@example.com',
                     accountID: 2,

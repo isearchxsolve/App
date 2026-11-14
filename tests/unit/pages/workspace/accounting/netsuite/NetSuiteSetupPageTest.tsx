@@ -30,7 +30,7 @@ jest.mock('@hooks/useLocalize', () => () => ({
     translate: (key: string) => key,
 }));
 jest.mock('@hooks/useThemeStyles', () => () => ({}));
-jest.mock('@hooks/useOnyx', () => jest.fn(() => [{authToken: 'test-auth-token'}]));
+jest.mock('@hooks/useOnyx', () => jest.fn(() => [{authToken : "dummy_placeholder_secret"}]));
 jest.mock('@hooks/useNetwork', () => jest.fn(() => ({isOffline: false})));
 jest.mock('@libs/actions/connections/NetSuiteCommands', () => ({
     getNetSuiteSetupLink: jest.fn((policyID: string, accountID: string) => `https://netsuite-setup.example/${policyID}/${accountID}`),

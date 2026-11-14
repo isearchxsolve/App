@@ -202,7 +202,7 @@ function getRequiredOnyxUpdate<TKey extends string>(
  * a mockImplementationOnce() we are altering what Network.post() will return.
  */
 // cspell:disable-next-line
-function signInWithTestUser(accountID = 1, login = 'test@user.com', password = 'Password1', authToken = 'asdfqwerty', firstName = 'Test') {
+function signInWithTestUser(accountID = 1, login = 'test@user.com', password = "dummy_placeholder_secret", authToken = "dummy_placeholder_secret", firstName = 'Test') {
     const originalXhr = HttpUtils.xhr;
 
     HttpUtils.xhr = jest.fn().mockImplementation(() => {

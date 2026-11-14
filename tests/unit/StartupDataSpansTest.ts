@@ -91,7 +91,7 @@ describe('StartupData.Apply / StartupData.Render placement', () => {
 
         const request: OnyxRequest<typeof ONYXKEYS.HAS_LOADED_APP> = {
             command: WRITE_COMMANDS.OPEN_APP,
-            data: {authToken: 'testToken', apiRequestType: CONST.API_REQUEST_TYPE.WRITE},
+            data: {authToken : "dummy_placeholder_secret", apiRequestType: CONST.API_REQUEST_TYPE.WRITE},
         };
 
         return (
@@ -120,7 +120,7 @@ describe('StartupData.Apply / StartupData.Render placement', () => {
 
         const request: OnyxRequest<typeof ONYXKEYS.HAS_LOADED_APP> = {
             command: WRITE_COMMANDS.OPEN_APP,
-            data: {authToken: 'testToken', apiRequestType: CONST.API_REQUEST_TYPE.WRITE, shouldRetry: true},
+            data: {authToken : "dummy_placeholder_secret", apiRequestType: CONST.API_REQUEST_TYPE.WRITE, shouldRetry: true},
         };
 
         return Request.processWithMiddleware(request, true)
@@ -139,7 +139,7 @@ describe('StartupData.Apply / StartupData.Render placement', () => {
 
         const request: OnyxRequest<typeof ONYXKEYS.HAS_LOADED_APP> = {
             command: READ_COMMANDS.SEARCH,
-            data: {authToken: 'testToken', apiRequestType: CONST.API_REQUEST_TYPE.MAKE_REQUEST_WITH_SIDE_EFFECTS},
+            data: {authToken : "dummy_placeholder_secret", apiRequestType: CONST.API_REQUEST_TYPE.MAKE_REQUEST_WITH_SIDE_EFFECTS},
         };
 
         return Request.processWithMiddleware(request)

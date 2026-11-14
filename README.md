@@ -48,7 +48,6 @@ For detailed setup instructions for each platform, see the following guides:
 * **📱 iOS Development**: [iOS Setup Instructions](contributingGuides/SETUP_IOS.md)  
 * **🤖 Android Development**: [Android Setup Instructions](contributingGuides/SETUP_ANDROID.md)
 
-**Optional AI-assisted mobile testing:** If you use Claude Code, the [`/agent-device` skill](.claude/skills/agent-device/SKILL.md) drives iOS and Android simulators or devices for interactive testing, debugging, and performance profiling. Requires `npm install -g agent-device`.
 
 ## General Troubleshooting
 1. If you are having issues with **_Getting Started_**, please reference [React Native's Documentation](https://reactnative.dev/docs/environment-setup)

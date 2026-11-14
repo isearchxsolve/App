@@ -42,7 +42,7 @@ describe('useReceiptScanDrop', () => {
         expect(result.current.isDragDisabled).toBe(true);
     });
     it('should enable drag for logged-in users', async () => {
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'test-token'});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
         const {result} = renderHook(() => useReceiptScanDrop());
         await waitForBatchedUpdatesWithAct();
         expect(result.current.isDragDisabled).toBe(false);

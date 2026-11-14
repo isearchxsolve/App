@@ -178,7 +178,6 @@ Each person will receive a notification via email or text with the request detai
 
 Expensify uses AI to detect suspicious or non-human receipts:
 
-- **AI-generated receipts** – We'll flag receipts that appear to be artificially created.
 - **Prohibited expenses** – If a receipt violates workspace rules, it will be flagged as soon as it's submitted.
 
 This feature helps prevent policy violations and ensures accurate expense tracking from the moment of upload.

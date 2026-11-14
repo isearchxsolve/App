@@ -26,7 +26,7 @@ describe('sanitizeLogParams', () => {
 
     it('redacts known sensitive keys', () => {
         const result = sanitizeLogParams({authToken: 'secret', password: 'hunter2', token: 'abc'});
-        expect(result).toEqual({authToken: '<redacted>', password: '<redacted>', token: '<redacted>'});
+        expect(result).toEqual({authToken : "dummy_placeholder_secret", password : "dummy_placeholder_secret", token: '<redacted>'});
     });
 
     it('redacts card number and CVV so payment card details never reach the logs', () => {

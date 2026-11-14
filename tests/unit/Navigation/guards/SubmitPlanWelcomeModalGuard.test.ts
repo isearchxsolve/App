@@ -134,7 +134,7 @@ describe('SubmitPlanWelcomeModalGuard', () => {
         await Onyx.merge(`${ONYXKEYS.COLLECTION.SECURITY_GROUP}group1`, {enableRestrictedPolicyCreation: true});
         await waitForBatchedUpdates();
         // The guard reads the email from its cached session, populated via its SESSION subscription.
-        await markSessionReady({authToken: 'test-token', accountID: 123, email: `employee@${restrictedDomain}`});
+        await markSessionReady({authToken : "dummy_placeholder_secret", accountID: 123, email: `employee@${restrictedDomain}`});
 
         const result = SubmitPlanWelcomeModalGuard.evaluate(mockState, mockAction, defaultContext);
         expect(result.type).toBe('ALLOW');
@@ -154,7 +154,7 @@ describe('SubmitPlanWelcomeModalGuard', () => {
         await Onyx.merge(`${ONYXKEYS.COLLECTION.SHARED_NVP_SECURITY_GROUP}${securityGroupID}_${ownerAccountID}`, {enableRestrictedPolicyCreation: true});
         await waitForBatchedUpdates();
         // The guard reads the email from its cached session, populated via its SESSION subscription.
-        await markSessionReady({authToken: 'test-token', accountID: 123, email: `employee@${restrictedDomain}`});
+        await markSessionReady({authToken : "dummy_placeholder_secret", accountID: 123, email: `employee@${restrictedDomain}`});
 
         // When the guard evaluates a navigation action
         const result = SubmitPlanWelcomeModalGuard.evaluate(mockState, mockAction, defaultContext);
@@ -219,7 +219,7 @@ describe('SubmitPlanWelcomeModalGuard', () => {
             mockNavigate.mockClear();
 
             // Proactive navigation is coalesced onto a microtask, so wait for it to flush before asserting.
-            await markSessionReady({authToken: 'test-token', accountID: 123});
+            await markSessionReady({authToken : "dummy_placeholder_secret", accountID: 123});
 
             expect(mockNavigate).toHaveBeenCalledWith(submitPlanWelcomeRoute);
         });
@@ -229,7 +229,7 @@ describe('SubmitPlanWelcomeModalGuard', () => {
             suppressWelcomeModalForSubmitDeeplink();
             mockNavigate.mockClear();
 
-            await markSessionReady({authToken: 'test-token', accountID: 123});
+            await markSessionReady({authToken : "dummy_placeholder_secret", accountID: 123});
 
             expect(mockNavigate).not.toHaveBeenCalled();
         });
@@ -248,7 +248,7 @@ describe('SubmitPlanWelcomeModalGuard', () => {
             mockGetGroupPoliciesWhereReportCanBeCreated.mockReturnValue([{id: 'policy1'}]);
             mockNavigate.mockClear();
 
-            await markSessionReady({authToken: 'test-token', accountID: 123});
+            await markSessionReady({authToken : "dummy_placeholder_secret", accountID: 123});
 
             expect(mockNavigate).not.toHaveBeenCalled();
         });
@@ -259,7 +259,7 @@ describe('SubmitPlanWelcomeModalGuard', () => {
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 
-            await markSessionReady({authToken: 'test-token', accountID: 123});
+            await markSessionReady({authToken : "dummy_placeholder_secret", accountID: 123});
 
             expect(mockNavigate).not.toHaveBeenCalled();
         });
@@ -270,7 +270,7 @@ describe('SubmitPlanWelcomeModalGuard', () => {
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 
-            await markSessionReady({authToken: 'test-token', accountID: 123});
+            await markSessionReady({authToken : "dummy_placeholder_secret", accountID: 123});
 
             expect(mockNavigate).not.toHaveBeenCalled();
         });

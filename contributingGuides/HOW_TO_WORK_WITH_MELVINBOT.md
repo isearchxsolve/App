@@ -101,5 +101,4 @@ We intentionally do **not** add a second round of contributor or C+ PR review on
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — full contributor workflow
 - [PROPOSAL_TEMPLATE.md](./PROPOSAL_TEMPLATE.md) — proposal format and C+ review instructions
 - [Reviewer Checklist](./REVIEWER_CHECKLIST.md) — C+ completes this during self-review before submitting for CME review
-- [AI Etiquette](./AI_ETIQUETTE.md) — accountability for AI-assisted work
 - [AI Reviewer philosophy](./philosophies/AI-REVIEWER.md) — automated PR feedback vs human review

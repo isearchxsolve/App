@@ -195,7 +195,7 @@ describe('MarketingAttribution', () => {
 
         it('does not store the attribution when the user already has a session', async () => {
             // Given a signed-in user and a landing URL with UTM params
-            await Onyx.set(ONYXKEYS.SESSION, {authToken: 'testAuthToken', email: 'test@test.com'});
+            await Onyx.set(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", email: 'test@test.com'});
             setLandingURL('?utm_source=google&utm_medium=cpc');
 
             // When the hook renders and the session has loaded
@@ -208,7 +208,7 @@ describe('MarketingAttribution', () => {
 
         it('stores the attribution when the user only has an anonymous session from viewing a public room', async () => {
             // Given an anonymous session and a landing URL with Google Ads params
-            await Onyx.set(ONYXKEYS.SESSION, {authToken: 'anonymousAuthToken', authTokenType: CONST.AUTH_TOKEN_TYPES.ANONYMOUS, email: 'anon-123@guest.expensify.com'});
+            await Onyx.set(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", authTokenType: CONST.AUTH_TOKEN_TYPES.ANONYMOUS, email: 'anon-123@guest.expensify.com'});
             setLandingURL('?gclid=testGclid&utm_source=google');
 
             // When the hook renders and the session has loaded
@@ -240,7 +240,7 @@ describe('MarketingAttribution', () => {
             // When signup clears it and the user later signs in and out
             await act(async () => {
                 await Onyx.set(ONYXKEYS.MARKETING_ATTRIBUTION, null);
-                await Onyx.set(ONYXKEYS.SESSION, {authToken: 'testAuthToken'});
+                await Onyx.set(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret"});
             });
             await act(async () => {
                 await Onyx.set(ONYXKEYS.SESSION, {});

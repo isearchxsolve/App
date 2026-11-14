@@ -126,10 +126,10 @@ describe('Log', () => {
 
     test('redacts sensitive-looking param keys', () => {
         const log = new Log(TEST_CONFIG);
-        log.alert('render failed', {authToken: 'super-secret', outPath: '/tmp/chart.png'});
+        log.alert('render failed', {authToken : "dummy_placeholder_secret", outPath: '/tmp/chart.png'});
 
         const line = stderrCapture.writes.at(0) ?? '';
-        expect(line).toContain("authToken: '<REDACTED>'");
+        expect(line).toContain("authToken : "dummy_placeholder_secret"");
         expect(line.includes('super-secret')).toBe(false);
         expect(line).toContain("outPath: '/tmp/chart.png'");
     });

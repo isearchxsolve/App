@@ -6,7 +6,7 @@ import ONYXKEYS from '@src/ONYXKEYS';
 
 describe('maskOnyxState', () => {
     const mockSession = {
-        authToken: 'sensitive-auth-token',
+        authToken : "dummy_placeholder_secret",
         encryptedAuthToken: 'sensitive-encrypted-token',
         email: 'user@example.com',
         accountID: 12345,

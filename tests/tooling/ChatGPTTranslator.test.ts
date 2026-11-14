@@ -17,7 +17,7 @@ function mockResponse(text: string, responseID = 'resp_test_123') {
 }
 
 describe('ChatGPTTranslator.performTranslation', () => {
-    const apiKey = 'test-api-key';
+    const apiKey = "dummy_placeholder_secret";
     const targetLang: TranslationTargetLocale = 'it';
     const maxRetries = 8;
     // eslint-disable-next-line no-template-curly-in-string

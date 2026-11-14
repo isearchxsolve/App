@@ -40,7 +40,7 @@ beforeEach(() => {
 
 const request: OnyxTypes.AnyRequest = {
     command: 'MockCommand',
-    data: {authToken: 'testToken'},
+    data: {authToken : "dummy_placeholder_secret"},
 };
 
 test('Request.addMiddleware() can register a middleware and it will run', () => {
@@ -122,7 +122,7 @@ test('Request.processWithMiddleware() passes real Error rejections through untou
 
 test('Request.processWithMiddleware() measures the request phases for measured commands only', () => {
     // Given a Search request, which is in MEASURED_REQUEST_PHASE_COMMANDS
-    return Request.processWithMiddleware({command: READ_COMMANDS.SEARCH, data: {authToken: 'testToken'}}).then(() => {
+    return Request.processWithMiddleware({command: READ_COMMANDS.SEARCH, data: {authToken : "dummy_placeholder_secret"}}).then(() => {
         // Then every phase around the network call and the Onyx apply is opened under the SearchData names, and each one is closed again
         const startedSpanIds = mockStartSpan.mock.calls.map(([spanId]) => spanId);
         const endedSpanIds = [...mockEndSpan.mock.calls, ...mockEndSpanWithAttributes.mock.calls].map(([spanId]) => spanId);
@@ -144,7 +144,7 @@ test('Request.processWithMiddleware() measures the request phases for measured c
 
 test('Request.processWithMiddleware() keeps startup on the StartupData span names', () => {
     // Adding a measured command must not move OpenApp onto shared span names, or its history in Sentry breaks
-    return Request.processWithMiddleware({command: WRITE_COMMANDS.OPEN_APP, data: {authToken: 'testToken'}}).then(() => {
+    return Request.processWithMiddleware({command: WRITE_COMMANDS.OPEN_APP, data: {authToken : "dummy_placeholder_secret"}}).then(() => {
         const startedSpanIds = mockStartSpan.mock.calls.map(([spanId]) => spanId);
         const startupPhases = [
             CONST.TELEMETRY.SPAN_STARTUP_DATA.WAIT,

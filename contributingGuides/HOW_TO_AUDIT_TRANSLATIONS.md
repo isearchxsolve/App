@@ -2,7 +2,6 @@
 
 ## 1. Purpose
 
-LLM-generated translations allow us to scale quickly across languages. The risk is not obvious mistranslation, but subtle instability: inconsistent terminology, workflow ambiguity, fragile templates, or tone drift.
 
 We validate whether the localization system produces:
 - Stable terminology

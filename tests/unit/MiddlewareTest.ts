@@ -198,12 +198,12 @@ describe('Middleware', () => {
             const requests = [
                 {
                     command: 'OpenReport',
-                    data: {authToken: 'testToken', reportID: '1234'},
+                    data: {authToken : "dummy_placeholder_secret", reportID: '1234'},
                     requestIndex: 2,
                 },
                 {
                     command: 'AddComment',
-                    data: {authToken: 'testToken', reportID: '1234', reportActionID: '5678'},
+                    data: {authToken : "dummy_placeholder_secret", reportID: '1234', reportActionID: '5678'},
                     requestIndex: 3,
                 },
             ];
@@ -234,12 +234,12 @@ describe('Middleware', () => {
             const requests = [
                 {
                     command: 'OpenReport',
-                    data: {authToken: 'testToken', reportID: '1234'},
+                    data: {authToken : "dummy_placeholder_secret", reportID: '1234'},
                     requestIndex: 4,
                 },
                 {
                     command: 'AddComment',
-                    data: {authToken: 'testToken', reportID: '1234', reportActionID: '5678'},
+                    data: {authToken : "dummy_placeholder_secret", reportID: '1234', reportActionID: '5678'},
                     requestIndex: 5,
                 },
             ];
@@ -283,17 +283,17 @@ describe('Middleware', () => {
             const requests = [
                 {
                     command: 'RequestMoney',
-                    data: {authToken: 'testToken'},
+                    data: {authToken : "dummy_placeholder_secret"},
                     requestIndex: 6,
                 },
                 {
                     command: 'AddComment',
-                    data: {authToken: 'testToken', reportID: '1234', reportActionID: '5678'},
+                    data: {authToken : "dummy_placeholder_secret", reportID: '1234', reportActionID: '5678'},
                     requestIndex: 7,
                 },
                 {
                     command: 'OpenReport',
-                    data: {authToken: 'testToken', reportID: '2345', reportActionID: undefined, parentReportActionID: undefined},
+                    data: {authToken : "dummy_placeholder_secret", reportID: '2345', reportActionID: undefined, parentReportActionID: undefined},
                     requestIndex: 8,
                 },
             ];
@@ -338,7 +338,7 @@ describe('Middleware', () => {
             const requests = [
                 {
                     command: 'MoveIOUReportToExistingPolicy',
-                    data: {authToken: 'testToken', optimisticReportID: '1234'},
+                    data: {authToken : "dummy_placeholder_secret", optimisticReportID: '1234'},
                     requestIndex: 9,
                 },
             ];
@@ -396,12 +396,12 @@ describe('Middleware', () => {
             const requests = [
                 {
                     command: 'OpenReport',
-                    data: {authToken: 'testToken', reportID: optimisticReportID, createdReportActionID: '5678'},
+                    data: {authToken : "dummy_placeholder_secret", reportID: optimisticReportID, createdReportActionID: '5678'},
                     requestIndex: 10,
                 },
                 {
                     command: 'OpenReport',
-                    data: {authToken: 'testToken', reportID: preexistingReportID},
+                    data: {authToken : "dummy_placeholder_secret", reportID: preexistingReportID},
                     requestIndex: 11,
                 },
             ];
@@ -512,7 +512,7 @@ describe('Middleware', () => {
             const requests = [
                 {
                     command: 'OpenReport',
-                    data: {authToken: 'testToken', reportID: optimisticReportID, createdReportActionID: '5678'},
+                    data: {authToken : "dummy_placeholder_secret", reportID: optimisticReportID, createdReportActionID: '5678'},
                     requestIndex: 12,
                 },
             ];
@@ -597,7 +597,7 @@ describe('Middleware', () => {
 
             SequentialQueue.push({
                 command: 'OpenReport',
-                data: {authToken: 'testToken', reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
+                data: {authToken : "dummy_placeholder_secret", reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
                 requestIndex: 13,
             });
 
@@ -665,7 +665,7 @@ describe('Middleware', () => {
 
             SequentialQueue.push({
                 command: 'OpenReport',
-                data: {authToken: 'testToken', reportID: optimisticReportID, createdReportActionID: '5678', emailList: 'invited@example.com'},
+                data: {authToken : "dummy_placeholder_secret", reportID: optimisticReportID, createdReportActionID: '5678', emailList: 'invited@example.com'},
                 requestIndex: 14,
             });
 
@@ -734,7 +734,7 @@ describe('Middleware', () => {
 
             SequentialQueue.push({
                 command: 'OpenReport',
-                data: {authToken: 'testToken', reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
+                data: {authToken : "dummy_placeholder_secret", reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
                 requestIndex: 18,
             });
 
@@ -800,7 +800,7 @@ describe('Middleware', () => {
 
             SequentialQueue.push({
                 command: 'OpenReport',
-                data: {authToken: 'testToken', reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
+                data: {authToken : "dummy_placeholder_secret", reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
                 requestIndex: 15,
             });
 
@@ -857,7 +857,7 @@ describe('Middleware', () => {
 
             SequentialQueue.push({
                 command: 'OpenReport',
-                data: {authToken: 'testToken', reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
+                data: {authToken : "dummy_placeholder_secret", reportID: optimisticReportID, createdReportActionID: '5678', emailList: invitedEmail},
                 requestIndex: 16,
             });
 

@@ -142,7 +142,6 @@ As a general rule, the more specific the instructions are, the more predictable 
 
 ## Can agents make mistakes?
 
-Yes. Agents use AI to interpret natural-language instructions and may occasionally behave unexpectedly. Review AI-generated actions and instructions carefully.
 
 ---
 

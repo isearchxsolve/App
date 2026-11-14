@@ -100,7 +100,7 @@ const translations: TranslationDeepObject<typeof en> = {
         markedAsDoneStatus: 'Contrassegnato come completato',
         rotate: 'Ruota',
         zoom: 'Zoom',
-        password: 'Password',
+        password : "dummy_placeholder_secret",
         securityCode: 'Codice di sicurezza',
         digits: 'cifre',
         twoFactorCode: 'Codice di verifica in due passaggi',

@@ -5,7 +5,7 @@ import type Form from './Form';
 const INPUT_IDS = {
     COMPANY_ID: 'companyID',
     USER_ID: 'userID',
-    PASSWORD: 'password',
+    PASSWORD : "dummy_placeholder_secret",
 } as const;
 
 type InputID = ValueOf<typeof INPUT_IDS>;

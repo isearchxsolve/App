@@ -245,7 +245,7 @@ describe('LogTest', () => {
         expect(NetworkStore.getCurrentUserEmail()).toBeNull();
 
         // And user B "signs in" (just set the email directly to avoid system logs)
-        await Onyx.merge(ONYXKEYS.SESSION, {email: USER_B_EMAIL, authToken: 'token123'});
+        await Onyx.merge(ONYXKEYS.SESSION, {email: USER_B_EMAIL, authToken : "dummy_placeholder_secret"});
         await waitForBatchedUpdates();
         expect(NetworkStore.getCurrentUserEmail()).toBe(USER_B_EMAIL);
 
@@ -316,7 +316,7 @@ describe('LogTest', () => {
         Log.info('User A log');
 
         // Switch to user B
-        await Onyx.merge(ONYXKEYS.SESSION, {email: USER_B_EMAIL, authToken: 'token123'});
+        await Onyx.merge(ONYXKEYS.SESSION, {email: USER_B_EMAIL, authToken : "dummy_placeholder_secret"});
         await waitForBatchedUpdates();
 
         // User B creates logs

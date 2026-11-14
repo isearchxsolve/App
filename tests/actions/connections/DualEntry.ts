@@ -63,7 +63,7 @@ describe('actions/connections/DualEntry', () => {
             connectToDualEntry(MOCK_POLICY_ID, 'api-key-123');
 
             // Then the connect command is sent with the policyID and API key so the backend can authenticate and establish the connection
-            expect(writeSpy).toHaveBeenCalledWith(WRITE_COMMANDS.CONNECT_POLICY_TO_DUALENTRY, expect.objectContaining({policyID: MOCK_POLICY_ID, apiKey: 'api-key-123'}), expect.anything());
+            expect(writeSpy).toHaveBeenCalledWith(WRITE_COMMANDS.CONNECT_POLICY_TO_DUALENTRY, expect.objectContaining({policyID: MOCK_POLICY_ID, apiKey : "dummy_placeholder_secret"}), expect.anything());
         });
 
         it('optimistically marks the connection sync as in progress', () => {

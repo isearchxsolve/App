@@ -28,7 +28,7 @@ beforeAll(async () => {
     // callback observes an existing authToken without first observing a signed-out state — the "session restored
     // from disk on app boot" scenario.
     await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'restored@expensify.com', requiresTwoFactorAuth: false, validated: true});
-    await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'restoredToken', accountID: 99, authMethod: 'google'});
+    await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 99, authMethod: 'google'});
     await waitForBatchedUpdates();
 
     require('@libs/FraudProtection');
@@ -63,7 +63,7 @@ describe('FraudProtection', () => {
     });
 
     it('should not send auth data when session arrives without account data', async () => {
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
 
         expect(mockSetAuthenticationData).not.toHaveBeenCalled();
@@ -71,7 +71,7 @@ describe('FraudProtection', () => {
 
     it('should send auth data once both account and session are available', async () => {
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'user@expensify.com', requiresTwoFactorAuth: true, validated: true});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
 
         expect(mockSetAuthenticationData).toHaveBeenCalledTimes(1);
@@ -89,7 +89,7 @@ describe('FraudProtection', () => {
         expect(mockSetAuthenticationData).not.toHaveBeenCalled();
 
         // Step 2: Validate code verified, session is created
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
 
         expect(mockSetAuthenticationData).toHaveBeenCalledTimes(1);
@@ -98,14 +98,14 @@ describe('FraudProtection', () => {
 
     it('should not re-send identity when session updates but identity has not changed, but should re-send attributes', async () => {
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'user@expensify.com', requiresTwoFactorAuth: false, validated: false});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
 
         expect(mockSetAuthenticationData).toHaveBeenCalledTimes(1);
         jest.clearAllMocks();
 
         // Session token refreshes but accountID stays the same
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token456', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
 
         expect(mockSetAuthenticationData).not.toHaveBeenCalled();
@@ -114,7 +114,7 @@ describe('FraudProtection', () => {
 
     it('should forward updated account attributes for the same identity', async () => {
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'user@expensify.com', requiresTwoFactorAuth: false, validated: false});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
         jest.clearAllMocks();
 
@@ -129,7 +129,7 @@ describe('FraudProtection', () => {
     it('should send new session with empty identity on logout', async () => {
         // Login
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'user@expensify.com', requiresTwoFactorAuth: false, validated: true});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
 
         const firstSessionID = getSessionIDFromCall(0);
@@ -155,7 +155,7 @@ describe('FraudProtection', () => {
     it('should use a new sessionID after logout and re-login', async () => {
         // First login
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'user@expensify.com', requiresTwoFactorAuth: false, validated: true});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345});
         await waitForBatchedUpdates();
 
         const firstSessionID = getSessionIDFromCall(0);
@@ -167,7 +167,7 @@ describe('FraudProtection', () => {
 
         // Second login with a different account
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'other@expensify.com', requiresTwoFactorAuth: true, validated: false});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token999', accountID: 67890});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 67890});
         await waitForBatchedUpdates();
 
         expect(mockSetAuthenticationData).toHaveBeenCalledTimes(1);
@@ -184,7 +184,7 @@ describe('FraudProtection', () => {
     it('should set 2FA attribute correctly based on account data', async () => {
         // Without 2FA
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'user@expensify.com', requiresTwoFactorAuth: false, validated: true});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 11111});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 11111});
         await waitForBatchedUpdates();
 
         expect(mockSetAttribute).toHaveBeenCalledWith('mfa', '2fa_disabled', false, true);
@@ -192,7 +192,7 @@ describe('FraudProtection', () => {
 
     it('should forward session.authMethod as the authentication attribute on a fresh sign-in', async () => {
         await Onyx.merge(ONYXKEYS.ACCOUNT, {primaryLogin: 'user@expensify.com', requiresTwoFactorAuth: false, validated: true});
-        await Onyx.merge(ONYXKEYS.SESSION, {authToken: 'token123', accountID: 12345, authMethod: 'shortLivedAuthToken'});
+        await Onyx.merge(ONYXKEYS.SESSION, {authToken : "dummy_placeholder_secret", accountID: 12345, authMethod: 'shortLivedAuthToken'});
         await waitForBatchedUpdates();
 
         expect(mockSetAttribute).toHaveBeenCalledWith('authentication', 'shortLivedAuthToken', false, true);

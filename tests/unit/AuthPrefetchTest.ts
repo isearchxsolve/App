@@ -44,7 +44,7 @@ describe('auth startup prefetch cleanup', () => {
 
         expect(mockClearPrefetchOnAppStart).toHaveBeenCalledTimes(1);
         expect(mockMerge).toHaveBeenCalledWith(ONYXKEYS.SESSION, {
-            authToken: 'authToken',
+            authToken : "dummy_placeholder_secret",
             encryptedAuthToken: 'encryptedAuthToken',
             creationDate,
         });

@@ -161,7 +161,7 @@ describe('HybridApp actions', () => {
             [ONYXKEYS.IS_LOADING_APP]: false,
             [ONYXKEYS.SESSION]: {
                 accountID: 1,
-                authToken: 'old-auth-token',
+                authToken : "dummy_placeholder_secret",
             },
             [ONYXKEYS.NVP_TRY_NEW_DOT]: {
                 classicRedirect: {
@@ -178,7 +178,7 @@ describe('HybridApp actions', () => {
 
         await Onyx.set(ONYXKEYS.SESSION, {
             accountID: 2,
-            authToken: 'new-auth-token',
+            authToken : "dummy_placeholder_secret",
         });
         await waitForBatchedUpdatesWithAct();
 
@@ -211,7 +211,7 @@ describe('HybridApp actions', () => {
         // SESSION fires after NVP — this is the initial undefined → accountID transition
         await Onyx.set(ONYXKEYS.SESSION, {
             accountID: 1,
-            authToken: 'auth-token',
+            authToken : "dummy_placeholder_secret",
         });
         await waitForBatchedUpdatesWithAct();
 
@@ -226,7 +226,7 @@ describe('HybridApp actions', () => {
             [ONYXKEYS.IS_LOADING_APP]: false,
             [ONYXKEYS.SESSION]: {
                 accountID: 1,
-                authToken: 'old-auth-token',
+                authToken : "dummy_placeholder_secret",
             },
             [ONYXKEYS.NVP_TRY_NEW_DOT]: {
                 classicRedirect: {
@@ -242,7 +242,7 @@ describe('HybridApp actions', () => {
         jest.clearAllMocks();
 
         await Onyx.merge(ONYXKEYS.SESSION, {
-            authToken: 'rotated-auth-token',
+            authToken : "dummy_placeholder_secret",
         });
         await waitForBatchedUpdatesWithAct();
 

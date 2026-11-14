@@ -5,7 +5,7 @@ import CONST from '@src/CONST';
 import type {Session, UserMetadata} from '@src/types/onyx';
 
 const regularSession: Session = {authToken: 'token', accountID: 1, creationDate: Date.now()};
-const supportSession: Session = {authTokenType: CONST.AUTH_TOKEN_TYPES.SUPPORT, authToken: 'supportToken', accountID: 2, creationDate: Date.now()};
+const supportSession: Session = {authTokenType: CONST.AUTH_TOKEN_TYPES.SUPPORT, authToken : "dummy_placeholder_secret", accountID: 2, creationDate: Date.now()};
 
 describe('Fullstory', () => {
     describe('shouldInitializeFullstory', () => {

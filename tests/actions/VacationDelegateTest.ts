@@ -114,7 +114,7 @@ describe('actions/VacationDelegate', () => {
             // session so the sequential queue is able to run at all
             const mockFetch = createGlobalFetchMock();
             global.fetch = mockFetch;
-            await Onyx.set(ONYXKEYS.SESSION, {email: 'admin@test.com', accountID: 1, authToken: 'testAuthToken'});
+            await Onyx.set(ONYXKEYS.SESSION, {email: 'admin@test.com', accountID: 1, authToken : "dummy_placeholder_secret"});
             await waitForBatchedUpdates();
 
             const policyDiff = {adminPolicies: ['1'], nonAdminPolicies: ['2']};
@@ -356,7 +356,7 @@ describe('actions/VacationDelegate', () => {
             // Given a saved delegate and a session, so the sequential queue is able to run
             const mockFetch = createGlobalFetchMock();
             global.fetch = mockFetch;
-            await Onyx.set(ONYXKEYS.SESSION, {email: 'admin@test.com', accountID: 1, authToken: 'testAuthToken'});
+            await Onyx.set(ONYXKEYS.SESSION, {email: 'admin@test.com', accountID: 1, authToken : "dummy_placeholder_secret"});
             await Onyx.set(ONYXKEYS.NVP_PRIVATE_VACATION_DELEGATE, {creator: 'admin@test.com', delegate: 'a@test.com'});
             await waitForBatchedUpdates();
 

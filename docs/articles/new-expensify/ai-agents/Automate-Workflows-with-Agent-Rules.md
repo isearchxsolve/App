@@ -174,7 +174,6 @@ Learn more about the [#admins room](/articles/new-expensify/chat/Expensify-Chat-
 
 Yes. Agent rules are evaluated by an LLM and may occasionally behave unexpectedly.
 
-Review AI-generated actions and instructions carefully. The agent rules page includes a reminder that AI-generated decisions may not always be correct.
 
 ## Do agent rules apply to existing reports?
 

@@ -29,7 +29,7 @@ const queuedOnyxUpdates: Array<
         key: ONYXKEYS.SESSION,
         value: {
             accountID: 18748326,
-            authToken: 'testToken',
+            authToken : "dummy_placeholder_secret",
             email: 'abcd+2342424224@gmail.com',
             encryptedAuthToken: 'testEncryptedAuthToken',
             loading: false,

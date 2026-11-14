@@ -523,7 +523,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
             mockNavigate.mockClear();
 
             // Now signal that session is ready and app is done loading
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, false);
             await waitForBatchedUpdates();
 
             expect(mockNavigate).toHaveBeenCalledWith(migratedUserWelcomeRoute);
@@ -540,7 +540,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, false);
             await waitForBatchedUpdates();
 
             expect(mockNavigate).toHaveBeenCalledWith(migratedUserWelcomeRoute);
@@ -548,7 +548,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
 
         it('should not navigate while cleared Onyx data is reloading', async () => {
             // Given an eligible migrated user who dismissed the welcome modal before the app finished loading.
-            const session = {authToken: 'test-token', accountID: 123};
+            const session = {authToken : "dummy_placeholder_secret", accountID: 123};
             mockActiveRoute = ROUTES.SETTINGS_TROUBLESHOOT;
             await Onyx.merge(ONYXKEYS.NVP_TRY_NEW_DOT, {
                 nudgeMigration: {
@@ -595,7 +595,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, true);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, true);
             await waitForBatchedUpdates();
 
             expect(mockNavigate).not.toHaveBeenCalled();
@@ -613,7 +613,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
             mockNavigate.mockClear();
 
             // When the app finishes loading in a copilot session
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123, authTokenType: CONST.AUTH_TOKEN_TYPES.DELEGATE}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123, authTokenType: CONST.AUTH_TOKEN_TYPES.DELEGATE}, false);
 
             // Then the modal is not opened, because it belongs to the delegator and a copilot must not see or dismiss it
             expect(mockNavigate).not.toHaveBeenCalled();
@@ -642,7 +642,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, false);
             await waitForBatchedUpdates();
 
             expect(mockNavigate).not.toHaveBeenCalled();
@@ -664,7 +664,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, false);
             await waitForBatchedUpdates();
 
             expect(mockNavigate).not.toHaveBeenCalled();
@@ -680,8 +680,8 @@ describe('MigratedUserWelcomeModalGuard', () => {
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, false);
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, false);
             await waitForBatchedUpdates();
 
             expect(mockNavigate).toHaveBeenCalledTimes(1);
@@ -689,7 +689,7 @@ describe('MigratedUserWelcomeModalGuard', () => {
 
         it('should navigate via Onyx NVP_DISMISSED_PRODUCT_TRAINING callback when session is already set', async () => {
             // Set session first
-            onSessionOrLoadingAppChanged({authToken: 'test-token', accountID: 123}, false);
+            onSessionOrLoadingAppChanged({authToken : "dummy_placeholder_secret", accountID: 123}, false);
             await waitForBatchedUpdates();
             mockNavigate.mockClear();
 

@@ -3151,7 +3151,7 @@ const CONST = {
         UNKNOWN_ERROR: 520,
     },
     HTTP_HEADER_NAMES: {
-        AUTH_TOKEN: 'authToken',
+        AUTH_TOKEN : "dummy_placeholder_secret",
     },
     ERROR: {
         XHR_FAILED: 'xhrFailed',

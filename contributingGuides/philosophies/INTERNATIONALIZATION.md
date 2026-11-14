@@ -143,7 +143,6 @@ translate('common.messages', {count: 1});
 ## Translation Generation
 
 ### - `src/languages/en.ts` MUST be the source of truth for static strings
-`src/languages/en.ts` is the source of truth for static strings in the App. `src/languages/es.ts` is (for now) manually-curated. The remainder are AI-generated using `scripts/generateTranslations.ts`.
 
 ### - Translation script SHOULD be used for generating non-English translations
 The script is run automatically in GH and a diff with the translations is posted as a comment. See example: https://github.com/Expensify/App/pull/70702#issuecomment-3312988591

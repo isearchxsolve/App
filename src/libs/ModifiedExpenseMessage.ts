@@ -368,7 +368,6 @@ function getForReportAction({
     if (hasModifiedComment) {
         let descriptionLabel = translate('common.description');
 
-        // Add attribution suffix based on AI-generated descriptions
         if (reportActionOriginalMessage?.aiGenerated) {
             descriptionLabel += ` ${translate('iou.basedOnAI')}`;
         }
@@ -568,7 +567,6 @@ function getForReportAction({
 
     if (message === '') {
         // If we don't have enough structured information to build a detailed message but we
-        // know the change was AI-generated, fall back to an AI-attributed generic summary so
         // users can still understand that Concierge updated the expense automatically.
         if (reportActionOriginalMessage?.aiGenerated) {
             return `${translate('iou.changedTheExpense')} ${translate('iou.basedOnAI')}`;

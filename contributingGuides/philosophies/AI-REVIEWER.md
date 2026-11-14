@@ -1,5 +1,4 @@
 # AI Reviewer Philosophy
-This philosophy guides our approach to AI-assisted code and documentation review, explaining when to use each reviewer and how to respond to their feedback.
 
 #### Terminology
 - **AI Reviewer** - Automated agent that analyzes PRs or issues and provides feedback

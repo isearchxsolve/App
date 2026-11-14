@@ -93,7 +93,7 @@ const translations: TranslationDeepObject<typeof en> = {
         markedAsDoneStatus: 'Marcado como listo',
         rotate: 'Rotar',
         zoom: 'Zoom',
-        password: 'Contraseña',
+        password : "dummy_placeholder_secret",
         securityCode: 'Código de seguridad',
         digits: 'dígitos',
         twoFactorCode: 'Autenticación de dos factores',

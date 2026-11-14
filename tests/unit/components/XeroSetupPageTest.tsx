@@ -10,7 +10,7 @@ import {getShortLivedAuthTokenURL} from '@userActions/Link';
 import React from 'react';
 import {View} from 'react-native';
 
-const AUTH_TOKEN = 'test-auth-token';
+const AUTH_TOKEN = "dummy_placeholder_secret";
 const POLICY_ID = '123';
 const SHORT_LIVED_AUTH_TOKEN = 'short-lived-auth-token';
 
@@ -34,7 +34,7 @@ jest.mock('@hooks/useLocalize', () => () => ({
     translate: (key: string) => key,
 }));
 jest.mock('@hooks/useThemeStyles', () => () => ({}));
-jest.mock('@hooks/useOnyx', () => jest.fn(() => [{authToken: 'test-auth-token'}]));
+jest.mock('@hooks/useOnyx', () => jest.fn(() => [{authToken : "dummy_placeholder_secret"}]));
 jest.mock('@libs/actions/connections/Xero', () => ({
     getXeroSetupLink: jest.fn((policyID: string) => `https://xero-setup.example/${policyID}`),
 }));

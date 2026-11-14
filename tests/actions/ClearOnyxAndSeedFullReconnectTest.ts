@@ -45,7 +45,7 @@ describe('actions/clearOnyxAndSeedFullReconnect', () => {
 
     it('preserves keys passed in keysToPreserve and clears everything else', async () => {
         await Onyx.multiSet({
-            [ONYXKEYS.SESSION]: {accountID: 1, authToken: 'preserved-auth-token'},
+            [ONYXKEYS.SESSION]: {accountID: 1, authToken : "dummy_placeholder_secret"},
             [ONYXKEYS.NVP_PRIORITY_MODE]: CONST.PRIORITY_MODE.DEFAULT,
         });
         await waitForBatchedUpdates();
@@ -153,7 +153,7 @@ describe('actions/clearOnyxAndSeedFullReconnect', () => {
 
     it('clears keys that were not in keysToPreserve and were not seeded', async () => {
         await Onyx.multiSet({
-            [ONYXKEYS.SESSION]: {accountID: 1, authToken: 'preserved-auth-token'},
+            [ONYXKEYS.SESSION]: {accountID: 1, authToken : "dummy_placeholder_secret"},
             [ONYXKEYS.IS_LOADING_APP]: false,
             [ONYXKEYS.NVP_PRIORITY_MODE]: CONST.PRIORITY_MODE.DEFAULT,
             [ONYXKEYS.HAS_LOADED_APP]: true,

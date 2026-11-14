@@ -158,7 +158,7 @@ const translations = {
         markedAsDoneStatus: 'Marked as done',
         rotate: 'Rotate',
         zoom: 'Zoom',
-        password: 'Password',
+        password : "dummy_placeholder_secret",
         securityCode: 'Security code',
         digits: 'digits',
         twoFactorCode: 'Two-factor code',
@@ -11585,7 +11585,6 @@ const translations = {
             }
             return `Receipt scanning failed.${canEdit ? ' Enter details manually.' : ''}`;
         },
-        receiptGeneratedWithAI: 'Potential AI-generated receipt',
         someTagLevelsRequired: (tagName?: string) => `Missing ${tagName ?? 'Tag'}`,
         tagOutOfPolicy: (tagName?: string) => `${tagName ?? 'Tag'} no longer valid`,
         taxAmountChanged: 'Tax amount was modified',
@@ -11645,7 +11644,6 @@ const translations = {
             overTripLimit: 'Over trip limit',
             perDayLimit: 'Over daily limit',
             prohibitedExpense: 'Prohibited expense',
-            receiptGeneratedWithAI: 'Possible AI-generated receipt',
             receiptNotSmartScanned: 'Receipt added manually',
             receiptRequired: 'Receipt required',
             rter: 'Awaiting card match',

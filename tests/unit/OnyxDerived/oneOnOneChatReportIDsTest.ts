@@ -124,7 +124,7 @@ describe('oneOnOneChatReportIDs', () => {
         const currentValue = oneOnOneChatReportIDsConfig.compute([reports, session], {});
 
         const withBob = collection(chatWith('10', ALICE), chatWith('20', BOB));
-        const next = oneOnOneChatReportIDsConfig.compute([withBob, {accountID: ME, authToken: 'refreshed'}], {
+        const next = oneOnOneChatReportIDsConfig.compute([withBob, {accountID: ME, authToken : "dummy_placeholder_secret"}], {
             currentValue,
             sourceValues: {},
             triggeredKeys: new Set([ONYXKEYS.SESSION]),

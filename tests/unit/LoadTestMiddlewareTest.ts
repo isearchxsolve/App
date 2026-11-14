@@ -65,7 +65,7 @@ describe('LoadTest middleware', () => {
         Request.addMiddleware(LoadTest);
 
         // When we process a single request
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '1'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '1'}});
         await waitForNetworkPromises();
 
         // Then only the real request should fire and no duplicates should be triggered
@@ -78,7 +78,7 @@ describe('LoadTest middleware', () => {
         setLoadTestParameters(JSON.stringify({multiplier: 3, expire: FUTURE}));
 
         // When we process a single request
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '1'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '1'}});
         await waitForNetworkPromises();
 
         // Then we should see 1 real request + 2 duplicates (multiplier - 1)
@@ -102,7 +102,7 @@ describe('LoadTest middleware', () => {
         setLoadTestParameters(JSON.stringify({multiplier: 5, expire: PAST}));
 
         // When we process a single request
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '1'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '1'}});
         await waitForNetworkPromises();
 
         // Then only the real request should fire (the expire window guards against accidentally DDOSing ourselves)
@@ -116,7 +116,7 @@ describe('LoadTest middleware', () => {
         fetchMock.mockImplementationOnce(() => Promise.reject(new Error('network down')));
 
         // When we process a request whose fetch call rejects
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '1'}}).catch(() => {
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '1'}}).catch(() => {
             // Swallow the rejection here so the test can continue.
         });
         await waitForNetworkPromises();
@@ -133,7 +133,7 @@ describe('LoadTest middleware', () => {
         setLoadTestParameters(JSON.stringify({multiplier: 4, expire: FUTURE}));
 
         // When we process a single request
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '1'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '1'}});
         await waitForNetworkPromises();
 
         // Then we expect exactly 1 real + 3 duplicates = 4 calls.
@@ -147,7 +147,7 @@ describe('LoadTest middleware', () => {
         setLoadTestParameters(JSON.stringify({multiplier: 2, expire: FUTURE}));
 
         // When we process a request with a specific reportID
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '99'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '99'}});
         await waitForNetworkPromises();
 
         // Then the duplicate should hit the same URL and carry the same reportID as the real request
@@ -177,7 +177,7 @@ describe('LoadTest middleware', () => {
         );
 
         // When we process the first request
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '1'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '1'}});
         await waitForNetworkPromises();
 
         // Then the first request itself makes 1 real + 2 duplicates because the header is parsed in
@@ -186,7 +186,7 @@ describe('LoadTest middleware', () => {
         expect(getMockCallsForTestUrl()).toHaveLength(3);
 
         // And when we process a second request
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '2'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '2'}});
         await waitForNetworkPromises();
 
         // Then it should also make 3 calls (1 real + 2 duplicates) using the previously stored multiplier
@@ -199,7 +199,7 @@ describe('LoadTest middleware', () => {
         setLoadTestParameters(JSON.stringify({multiplier: 3, expire: FUTURE}));
 
         // When we process a request whose mocked response carries no Headers object (state should remain intact)
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '1'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '1'}});
         await waitForNetworkPromises();
 
         // Then it should make 3 calls (1 real + 2 duplicates)
@@ -217,7 +217,7 @@ describe('LoadTest middleware', () => {
         );
 
         // When we process a second request
-        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken: 'testToken', reportID: '2'}});
+        await Request.processWithMiddleware({command: TEST_COMMAND, data: {authToken : "dummy_placeholder_secret", reportID: '2'}});
         await waitForNetworkPromises();
 
         // Then load testing is disabled (state cleared) and only the real request is sent (3 + 1 total)
